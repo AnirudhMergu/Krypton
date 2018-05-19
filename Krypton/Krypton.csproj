@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>fd252ced-aba0-418e-bfa9-f7b9386a7caa</ProjectGuid>
+    <ProjectGuid>{FD252CED-ABA0-418E-BFA9-F7B9386A7CAA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Krypton</RootNamespace>
@@ -30,24 +30,115 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.2\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+      <Aliases>itext</Aliases>
+    </Reference>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.DurableInstancing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Cng, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Cng.4.4.0\lib\net47\System.Security.Cryptography.Cng.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.OpenSsl, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.OpenSsl.4.4.0\lib\netstandard2.0\System.Security.Cryptography.OpenSsl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Pkcs.4.4.0\lib\net461\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.ProtectedData.4.4.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.4.4.2\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Certificates\CertificateEnhancedKeyUsage.cs" />
+    <Compile Include="Certificates\CertificateKeyUsage.cs" />
+    <Compile Include="Certificates\CertificateStatus.cs" />
+    <Compile Include="Certificates\DigitalCertificate.cs" />
+    <Compile Include="Certificates\DigitalCertificateSearchCriteria.cs" />
+    <Compile Include="Certificates\ExtensionInfo.cs" />
+    <Compile Include="Certificates\Extensions.cs" />
+    <Compile Include="Certificates\IExternalSignature.cs" />
+    <Compile Include="Certificates\KeySize.cs" />
+    <Compile Include="Certificates\SignatureAlgorithm.cs" />
+    <Compile Include="Certificates\SubjectType.cs" />
+    <Compile Include="Certificates\VerificationType.cs" />
+    <Compile Include="Certificates\X509CertificateGenerator.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="CustomExceptions.cs" />
+    <Compile Include="HashAlgorithm.cs" />
+    <Compile Include="Licensing.cs" />
+    <Compile Include="Pdf\CertifyMethod.cs" />
+    <Compile Include="Pdf\CustomImage.cs" />
+    <Compile Include="Pdf\CustomText.cs" />
+    <Compile Include="Pdf\FontName.cs" />
+    <Compile Include="Pdf\ImagePosition.cs" />
+    <Compile Include="Pdf\PadesLtvLevel.cs" />
+    <Compile Include="Pdf\PdfDocumentProperties.cs" />
+    <Compile Include="Pdf\PdfDocumentRestrictions.cs" />
+    <Compile Include="Pdf\PdfEncrypt.cs" />
+    <Compile Include="Pdf\PdfEncryptionAlgorithm.cs" />
+    <Compile Include="Pdf\PdfEncryptionMethod.cs" />
+    <Compile Include="Pdf\PdfEncryptionSettings.cs" />
+    <Compile Include="Pdf\PdfInsertObject.cs" />
+    <Compile Include="Pdf\PdfMerge.cs" />
+    <Compile Include="Pdf\PdfSignature.cs" />
+    <Compile Include="Pdf\PdfSignatureInfo.cs" />
+    <Compile Include="Pdf\SignatureImageType.cs" />
+    <Compile Include="Pdf\SignaturePosition.cs" />
+    <Compile Include="Pdf\TextAlign.cs" />
+    <Compile Include="Pdf\TextDirection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignatureStandard.cs" />
+    <Compile Include="Timestamping\TimestampAccuracy.cs" />
+    <Compile Include="Timestamping\TimestampClient.cs" />
+    <Compile Include="Timestamping\TimestampFormat.cs" />
+    <Compile Include="Timestamping\TimestampInfo.cs" />
+    <Compile Include="Timestamping\TimestampSettings.cs" />
+    <Compile Include="XmlSignature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\System.Security.Cryptography.Hashing.Algorithms.Analyzers.1.1.0\analyzers\dotnet\cs\System.Security.Cryptography.Hashing.Algorithms.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Security.Cryptography.Hashing.Algorithms.Analyzers.1.1.0\analyzers\dotnet\cs\System.Security.Cryptography.Hashing.Algorithms.CSharp.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
