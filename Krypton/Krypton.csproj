@@ -29,6 +29,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>KryptoSigner.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.2\lib\BouncyCastle.Crypto.dll</HintPath>
@@ -100,7 +106,6 @@
     <Compile Include="Certificates\SubjectType.cs" />
     <Compile Include="Certificates\VerificationType.cs" />
     <Compile Include="Certificates\X509CertificateGenerator.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="CustomExceptions.cs" />
     <Compile Include="HashAlgorithm.cs" />
     <Compile Include="Licensing.cs" />
@@ -134,6 +139,7 @@
     <Compile Include="XmlSignature.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="KryptoSigner.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
